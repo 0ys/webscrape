@@ -27,6 +27,7 @@ for website in websites:
 print(results)
 
 '''
+# https://httpstat.us/xxx = http코드를 생성해주는 사이트
 HTTP Status Code
 
 1XX : Information responses
