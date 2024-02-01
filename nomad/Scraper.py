@@ -18,14 +18,13 @@ import csv
 
 class Scraper:
 
-    def __init__(self, url, user_agent):
-        self.url = url
+    def __init__(self, user_agent):
         self.user_agent = user_agent
         self.jobs_db = []
 
-    def scrape_page(self):
-        print(f"Scraping {self.url}...", end=" ")
-        response = requests.get(self.url, 
+    def scrape_page(self, url):
+        print(f"Scraping {url}...", end=" ")
+        response = requests.get(url, 
             headers={
             "User-Agent": self.user_agent
         })
@@ -48,8 +47,8 @@ class Scraper:
             }
             self.jobs_db.append(job_data)
 
-    def get_pages(self):
-        response = requests.get(self.url, 
+    def get_pages(self, url):
+        response = requests.get(url, 
         headers={
         "User-Agent": self.user_agent
         })
