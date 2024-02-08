@@ -70,16 +70,16 @@ def main(keyword):
     scraper.scrape_page(url, keyword=keyword)
     jobs = scraper.get_data()
 
-    # print(jobs)
-    # print(f"{len(jobs)} scrape")
+    file_name = "jobs.txt"
+    with open(file_name, "w", encoding="utf-8") as file:
+        file.write(jobs[0])
 
     conn = dbconnect()
-    print("Connect DB...")
     insert_data(conn, site_url=url, keyword=keyword, scrap_result=jobs[0])
     print("Insert DB..")
     
     conn.close()
-    print("Finished DB..")
+    print("DB Completed..")
 
 
 if __name__ == '__main__':
