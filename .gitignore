@@ -1,2 +1,4 @@
 db_setting.py
 test.py
+*.html
+*.txt
